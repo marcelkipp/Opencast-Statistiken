@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<style>
+			#days {transition:all 0.5s;font-size:18px;padding:10px 30px;color:#fff;width:39px;font-family: arial;border-radius: 4px;background-color:#4BB2C5;cursor: pointer;}
+			#days:hover {background-color: #0065B2;}
+			#month {transition:all 0.5s;font-size:18px;padding:10px 30px;color:#fff;width:77px;font-family: arial;border-radius: 4px;background-color:#4BB2C5;cursor: pointer;}
+			#month:hover {background-color: #0065B2;}
+		</style>
+	</head>
+	<body>
+		<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="excanvas.js"></script><![endif]-->
+	<script language="javascript" type="text/javascript" src="src/jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="src/jquery.jqplot.js"></script>
+	<script type="text/javascript" src="src/plugins/jqplot.barRenderer.js"></script>
+	<script type="text/javascript" src="src/plugins/jqplot.pieRenderer.js"></script>
+	<script type="text/javascript" src="src/plugins/jqplot.categoryAxisRenderer.js"></script>
+	<script type="text/javascript" src="src/plugins/jqplot.pointLabels.js"></script>
+	<script type="text/javascript" src="change.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/jquery.jqplot.css" />
+		<script type="text/javascript">
+		$(document).ready(function(){
+			var ticks; // x-achse
+			var s1;	//y-achse
+			var tage = [];
+			var graph_length;
+			var postvalue = localStorage.getItem('value');
+			function getDates(){
+				$.ajax({
+					type: "GET",
+					dataType: "json",
+					url: "file.php?value="+postvalue,
+					async:false,
+					success: function(data) {
+						var t = data.dates;
+						console.log(data.dates);
+						getTicks(t);
+						var s = data.count;
+						getCounts(s);
+						var z = data.numberofdates;
+						getNumberOfDates(z);
+					}
+				});	
+			}
+			getDates();
+
+			function getTicks(t){
+				ticks = $.map(t, function(el) { return el; }); // aus json wird ein array erstellt 
+			}
+
+			function getCounts(s){
+				s1 = $.map(s, function(el) { return el; }); // aus json wird ein array erstellt 
+			}
+
+			function getNumberOfDates(z){
+				graph_length = z * 30;
+				$('body').append('<div id="chartdiv" style="height:500px;width:'+graph_length+'px; "></div>');
+			}
+
+			$.jqplot.config.enablePlugins = true;
+	        
+	        plot1 = $.jqplot('chartdiv', [s1], {
+	        	title: "Opencast-Player Aufrufe",
+	            animate: !$.jqplot.use_excanvas,
+	            seriesDefaults:{
+	                renderer:$.jqplot.BarRenderer,
+	                pointLabels:{
+	                	show: true,
+	                	color:"#000000",
+	                }
+	            },
+	            grid: {
+	            	background:"#ffffff",
+	            	borderColor:"rgba(244,233,223,0)",
+	            	shadow:false,
+	            },
+	            axes: {
+	                xaxis: {
+	                    renderer: $.jqplot.CategoryAxisRenderer,
+	                    ticks: ticks,
+	                    label:"Zeitpunkt",
+	                    shadow:false,
+	                },
+	                yaxis: {
+	                	label:"Aufrufe"
+	                }
+	            },
+	            highlighter: { show: false }
+	        });
+     
+	        $('#chartdiv').bind('jqplotDataClick', 
+	            function (ev, seriesIndex, pointIndex, data) {
+	                $('#info1').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
+	            }
+	        );
+		});
+		</script>
+		<div id="days" onclick="setDays()" style="display:none;">DAY</div>
+		<div id="month" onclick="setMonth()" style="display:none;">MONTH</div>
+	</body>
+</html>
+
+
