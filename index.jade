@@ -1,0 +1,72 @@
+//output:index.html
+
+html
+  head
+    title OpencastStats
+    link(rel='stylesheet', href='bootstrap/bootstrap.min.css')
+    link(rel='stylesheet', href='bootstrap/bootflat.css')
+    link(rel='stylesheet', href='ui.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css')
+    // Datepicker CSS
+    link(rel='stylesheet', href='src/css/datepicker.css')
+  body
+    .godfather
+      button.btn1 read file
+      button.btn2 create data
+    // #stats
+    #page3
+      .container.container-box
+        // Navigation
+        nav.navbar.navbar-default
+          .container-fluid(style='padding-top:20px;')
+            .navbar-header
+              img(alt='Brand', src='src/img/logo.png')
+            ul.nav.navbar-nav.navbar-right
+              li
+                a.datepicker(href='#', data-date='12-02-2012', data-date-format='dd-mm-yyyy')
+                  i.fa.fa-calendar
+              li
+                a(href='#', onclick='setMonth()') Month
+              li
+                a(href='#', onclick='setDays()') Days
+        // Navigation Ende
+        .container-chart
+          canvas#canvas(width='1000', height='600px')
+        div
+          ul.xachse
+            li Jan
+            li Feb
+            li Mar
+            li Apr
+            li May
+            li Jun
+            li Jul
+            li Aug
+            li Sep
+            li Okt
+            li Nov
+            li Dez
+            div(style='clear:both;')
+        .row
+          .col-md-4.totalaverage.totalview
+            | &Oslash; Total Views
+          #totalview.totalview.col-md-4
+            | Total Views
+          .average_per_month.col-md-4
+            | &Oslash; per Month
+            #average_month 0
+            #average_month_name January
+    // Bootstrap
+    script(src='https://code.jquery.com/jquery-1.11.0.min.js')
+    script(src='https://netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js')
+    // Bootflat's JS files.
+    script(src='https://bootflat.github.io/bootflat/js/icheck.min.js')
+    script(src='https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js')
+    script(src='https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js')
+    // Datepicker
+    script(type='text/javascript', src='src/js/Datepicker/bootstrap-datepicker.js')
+    // Custom JS
+    script(type='text/javascript', src='src/js/change.js')
+    script(type='text/javascript', src='src/js/custom2.js')
+    // ChartJS
+    script(src='src/js/Chartjs/chart.js')

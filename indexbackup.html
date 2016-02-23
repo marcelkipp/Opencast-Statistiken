@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>OpencastStats</title>
+        <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="bootstrap/bootflat.css">
+        <link rel="stylesheet" href="ui.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <!-- Datepicker CSS -->
+        <link rel="stylesheet" href="src/css/datepicker.css">
+
+    </head>
+
+    <body>
+
+      <div class="godfather">
+        <button class="btn1">read file</button>
+        <button class="btn2">create data</button>
+      </div>
+
+      <!-- #stats -->
+      <div id="page3">
+
+        <div class="container container-box">
+          <!--Navigation-->
+          <nav class="navbar navbar-default">
+            <div class="container-fluid" style="padding-top:20px;">
+              <div class="navbar-header">
+                  <img alt="Brand" src="src/img/logo.png">
+              </div>
+               <ul class="nav navbar-nav navbar-right">
+                 <li><a href="#" class="datepicker"  data-date="12-02-2012" data-date-format="dd-mm-yyyy"><i class="fa fa-calendar"></i></a></li>
+                 <li><a href="#" onclick="setMonth()">Month</a></li>
+                 <li><a href="#" onclick="setDays()">Days</a></li>
+               </ul>
+            </div>
+          </nav>
+          <!--Navigation Ende-->
+
+          <div class="container-chart">
+            <canvas id="canvas" width="1000" height="600px"></canvas>
+          </div>
+
+          <div>
+            <ul class="xachse">
+              <li>Jan</li>
+              <li>Feb</li>
+              <li>Mar</li>
+              <li>Apr</li>
+              <li>May</li>
+              <li>Jun</li>
+              <li>Jul</li>
+              <li>Aug</li>
+              <li>Sep</li>
+              <li>Okt</li>
+              <li>Nov</li>
+              <li>Dez</li>
+              <div style="clear:both;"></div>
+            </ul>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 totalaverage totalview">
+              &Oslash; Total Views
+            </div>
+            <div class="totalview col-md-4" id="totalview">
+                Total Views
+            </div>
+            <div class=" average_per_month col-md-4">
+              &Oslash; per Month
+              <div id="average_month">0</div>
+              <div id="average_month_name">January</div>
+            </div>
+          </div>
+
+        </div>
+
+        </div>
+
+
+
+        <!-- Bootstrap -->
+        <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+        <!-- Bootflat's JS files.-->
+        <script src="https://bootflat.github.io/bootflat/js/icheck.min.js"></script>
+        <script src="https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js"></script>
+        <script src="https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js"></script>
+
+        <!-- Datepicker  -->
+        <script type="text/javascript" src="src/js/Datepicker/bootstrap-datepicker.js"></script>
+
+        <!-- Custom JS -->
+        <script type="text/javascript" src="src/js/change.js"></script>
+        <script type="text/javascript" src="src/js/custom2.js"></script>
+
+        <!-- ChartJS -->
+        <script src="src/js/Chartjs/chart.js"></script>
+    </body>
+</html>

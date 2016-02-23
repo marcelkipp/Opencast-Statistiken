@@ -1,49 +1,55 @@
-@charset "CP850";
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\000031}}
 body {
-  background-color: gray; }
+  background: #d0d8dc; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\000034}}
+.godfather {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000322}}
 .container-box {
   width: 1000px;
   background-color: white;
   padding: 0px;
-  position: absolute;
+  position: relative;
   z-index: 10;
-  top: 50%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%) ﻿; }
+  margin-left: -500px;
+  margin-top: 50px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000334}}
 .totalview {
   text-align: center;
   font-size: 24px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000338}}
 .totalview div {
   font-size: 56px;
   font-style: bold; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000342}}
 .average_per_month {
   text-align: center;
   font-size: 24px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000346}}
 .average_per_month div {
   text-align: center;
   font-size: 24px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000351}}
 .col-md-4 {
   padding: 50px 0px 50px 0px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000354}}
 .container-chart {
   width: 100%;
-  height: 600px;
+  height: 571px;
   position: relative;
   top: 0px;
   z-index: 1;
@@ -53,3 +59,17 @@ body {
   background: -ms-linear-gradient(top, #6cb06b 0%, #4bb07b 66%, #4bb07b 100%);
   background: -o-linear-gradient(top, #6cb06b 0%, #4bb07b 66%, #4bb07b 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6cb06b, endColorstr=#4BB07B,GradientType=1); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000367}}
+.xachse {
+  width: 100%;
+  list-style: none;
+  background-color: #5db888;
+  padding: 0px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/xampp\/htdocs\/Opencast-Statistiken\/ui\.sass}line{font-family:\0000372}}
+  .xachse li {
+    width: 83px;
+    text-align: center;
+    color: white;
+    padding: 20px 0px;
+    float: left; }

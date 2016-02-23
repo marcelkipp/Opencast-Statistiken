@@ -134,5 +134,12 @@
 	// } else {
 	// 	echo json_encode($values_month);
 	// }
+
+
+	$fp = fopen('src/json/results.json', 'w');
+	fwrite($fp, json_encode($values));
+	fclose($fp);
+
 	echo json_encode($values);
+
 ?>
