@@ -2525,11 +2525,11 @@ a.list-group-item-danger.active, a.list-group-item-danger:hover, a.list-group-it
  * --------------------------------------------------
  */
 .dropdown-menu {
-  background-color: #434a54;
+  background-color: #fff;
   border: none;
 }
 .dropdown-menu .dropdown-header {
-  padding: 5px 20px;
+  /*padding: 5px 20px;*/
   font-size: 14px;
   font-weight: 700;
   color: #aab2bd;
